@@ -23,7 +23,7 @@ return poruke;
 public void unesi(String korisnik, String poruka) {
       //Pravi se nova poruka i puni podacima.
        TwitterPoruka tp = new TwitterPoruka();
-       tp.setKorisnik("korisnik");
+       tp.setKorisnik(korisnik);
        tp.setPoruka(poruka);
       //Poruka se unosi u listu na kraj
       poruke.addLast(tp);

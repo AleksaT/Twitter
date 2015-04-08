@@ -15,42 +15,54 @@ import org.junit.Test;
  */
 public class TwitterTest {
 
-	/**
-	 * @throws java.lang.Exception
-	 */
+	Twitter t;
 	@Before
 	public void setUp() throws Exception {
+		t = new Twitter();
 	}
 
-	/**
-	 * @throws java.lang.Exception
-	 */
+	
 	@After
 	public void tearDown() throws Exception {
+		t=null;
 	}
 
-	/**
-	 * Test method for {@link com.twitter.Twitter#vratiSvePoruke()}.
-	 */
+	
 	@Test
 	public void testVratiSvePoruke() {
-		fail("Not yet implemented");
+		t.unesi( "korisnik1", "poruka1");
+				t.unesi("korisnik2", "poruka2");
+				
+				assertEquals("korisnik1", t.vratiSvePoruke().getFirst().getKorisnik());
+				assertEquals("poruka1", t.vratiSvePoruke().get(0).getPoruka());
+				
+				assertEquals(2, t.vratiSvePoruke().size());
 	}
 
-	/**
-	 * Test method for {@link com.twitter.Twitter#unesi(java.lang.String, java.lang.String)}.
-	 */
+	
 	@Test
 	public void testUnesi() {
-		fail("Not yet implemented");
+		t.unesi("korisnik3", "poruka");
+		assertEquals("korisnik3",t.vratiSvePoruke().getFirst().getKorisnik());
+		assertEquals("poruka",t.vratiSvePoruke().getFirst().getPoruka());
 	}
-
-	/**
-	 * Test method for {@link com.twitter.Twitter#vratiPoruke(int, java.lang.String)}.
-	 */
+	@Test (expected = java.lang.RuntimeException.class)
+		public void test1() {
+			t.unesi(null, "poruka");
+	}
+	@Test (expected = java.lang.RuntimeException.class)
+	public void test2() {
+		t.unesi("korisnik", null);
+}
+	@Test (expected = java.lang.RuntimeException.class)
+	public void test3() {
+		t.unesi("", null);}
+	@Test (expected = java.lang.RuntimeException.class)
+	public void test4() {
+		t.unesi("korisnik", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");}
 	@Test
 	public void testVratiPoruke() {
-		fail("Not yet implemented");
+		
 	}
 
 }
