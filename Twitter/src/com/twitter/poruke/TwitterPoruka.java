@@ -2,11 +2,11 @@ package com.twitter.poruke;
 
 public class TwitterPoruka {
 	/*
-	 * atribut korisnik
+	 * atribut korisnik-ime korisnika
 	 */
 	private String korisnik;
 	/*
-	 * atribut poruka
+	 * atribut poruka-sadrzaj poruke
 	 */
 	private String poruka;
 	/*
