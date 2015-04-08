@@ -12,63 +12,66 @@ import org.junit.Test;
 
 public class TwitterPorukaTest {
 
+	TwitterPoruka p1;
 	
 	@Before
 	public void setUp() throws Exception {
+		 p1 = new TwitterPoruka();
 	}
 
 	
 	@After
 	public void tearDown() throws Exception {
+		p1 = null;
 	}
 
 	
 	@Test
 	public void testSetKorisnik() {
-		TwitterPoruka p1 = new TwitterPoruka();
+		
 		p1.setKorisnik("korisnik");
 		assertEquals("korisnik", p1.getKorisnik());
 	}
 	@Test (expected = java.lang.RuntimeException.class)
 	public void testSetKorisnik1() {
-		TwitterPoruka p1 = new TwitterPoruka();
+		
 		p1.setKorisnik(null);
 		
 	}
 	@Test (expected = java.lang.RuntimeException.class)
 	public void testSetKorisnik2() {
-		TwitterPoruka p1 = new TwitterPoruka();
+		
 		p1.setKorisnik("");
 		
 	}
 	@Test (expected = java.lang.RuntimeException.class)
 	public void testSetPoruka() {
-		TwitterPoruka poruka = new TwitterPoruka();
-		poruka.setPoruka(null);
+		
+		p1.setPoruka(null);
 		
 	}
 	@Test 
 	public void testSetPoruka1() {
-		TwitterPoruka poruka = new TwitterPoruka();
-		poruka.setPoruka("poruka");
-		assertEquals("poruka", poruka.getPoruka());
+		
+		p1.setPoruka("poruka");
+		assertEquals("poruka", p1.getPoruka());
 	}
 	
 		
 	
 	@Test (expected = java.lang.RuntimeException.class)
 	public void testSetPoruka3() {
-		TwitterPoruka poruka = new TwitterPoruka();
-		poruka.setPoruka("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+		
+		p1.setPoruka("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 		
 	}
 	@Test
 	public void testToString() {
-		TwitterPoruka poruka = new TwitterPoruka();
-			poruka.setKorisnik("korisnik");
-			poruka.setPoruka("poruka");
+		
+			p1.setKorisnik("korisnik");
+			p1.setPoruka("poruka");
 				
-				assertEquals("KORISNIK:korisnik PORUKA:poruka", "KORISNIK:"+poruka.getKorisnik()+" PORUKA:"+poruka.getPoruka());
+				assertEquals("KORISNIK:korisnik PORUKA:poruka", "KORISNIK:"+p1.getKorisnik()+" PORUKA:"+p1.getPoruka());
 	}
 
 }
