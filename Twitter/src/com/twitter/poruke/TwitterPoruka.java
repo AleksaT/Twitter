@@ -40,9 +40,9 @@ public class TwitterPoruka {
 	 * @throws RuntimeException ukoliko poruka nije uneta ili ima vise od 140 znakova
 	 */
 	public void setPoruka(String poruka) {
-	if (poruka==null || poruka.length()>140)
+	if (poruka==null || poruka.length()>140){
 	throw new RuntimeException(
-	"Poruka mora biti uneta i mora imati najvise 140 znakova");
+	"Poruka mora biti uneta i mora imati najvise 140 znakova");}
 	this.poruka = poruka;
 	}
 	
