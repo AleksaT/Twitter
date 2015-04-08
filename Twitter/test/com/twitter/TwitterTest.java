@@ -9,6 +9,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.twitter.poruke.TwitterPoruka;
+
 /**
  * @author ASUS
  *
@@ -62,7 +64,25 @@ public class TwitterTest {
 		t.unesi("korisnik", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");}
 	@Test
 	public void testVratiPoruke() {
-		
+		t.unesi("k1", "p1");
+			t.unesi("k2", "p2");
+				t.unesi("k3", "p3");
+				
+				TwitterPoruka[] rezultat = t.vratiPoruke(7,"p");
+				
+				assertEquals(7 , rezultat.length);
+				assertEquals("p1", rezultat[0].getPoruka());
+				assertEquals("k1", rezultat[0].getKorisnik());
+				assertEquals("p2", rezultat[1].getPoruka() );
+				assertEquals("k2", rezultat[1].getKorisnik());
+				assertEquals(null, rezultat[5]);
 	}
 
-}
+	@Test (expected = java.lang.RuntimeException.class)
+		public void test7() {
+			t.vratiPoruke(6, null);
+		}
+	@Test (expected = java.lang.RuntimeException.class)
+		public void test8() {
+			t.vratiPoruke(6, "");
+}}
