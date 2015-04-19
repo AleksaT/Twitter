@@ -12,7 +12,8 @@ import org.junit.Test;
 import com.twitter.poruke.TwitterPoruka;
 
 /**
- * @author ASUS
+ * @author AleksaT
+ * @version 0.1
  *
  */
 public class TwitterTest {

@@ -1,13 +1,19 @@
 package com.twitter;
 import java.util.LinkedList;
 import com.twitter.poruke.TwitterPoruka;
-
+/**
+ * Klasa Twitter ima atribut koji predstavlja listu objekata TwitterPoruka
+ * sadrzi metode koje unose poruku nekog korisnika, kao i metoda koja vraca poruke sa trazenim tagom 
+ * @author Aleksa T
+ * @version 0.1
+ *
+ */
 public class Twitter {
-	/*
+	/**
 	 * lista poruka korisnika
 	 */
 private LinkedList<TwitterPoruka> poruke =new LinkedList<TwitterPoruka>();
-/*
+/**
  * Vraca listu poruka
  * @return vraca sve poruke
  */
@@ -15,7 +21,7 @@ private LinkedList<TwitterPoruka> poruke =new LinkedList<TwitterPoruka>();
 public LinkedList<TwitterPoruka> vratiSvePoruke(){
 return poruke;
 }
-/*
+/**
  * Unosi se nova poruka na kraj liste. Poruka sadrzi
  * @param korisnik ime korisnika
  * @param poruka sadrzaj poruke koju je korisnik uneo
@@ -28,7 +34,7 @@ public void unesi(String korisnik, String poruka) {
       //Poruka se unosi u listu na kraj
       poruke.addLast(tp);
 }
-/*
+/**
  * vraca se odredjen broj poruka sa trazenim tagom
  * @param maxBroj maksimalan broj poruka koji moze da se vrati
  * @param tag string koji predstavlja kljuc pretrage

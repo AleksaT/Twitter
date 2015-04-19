@@ -1,22 +1,29 @@
 package com.twitter.poruke;
+/**
+ * Klasa TwitterPoruka predstavlja twitter poruku koja ima atribute korisnik(Ime korisnika cija je poruka)
+ *  i poruka(sadrzaj poruke) 
+ * @author Aleksa
+ * @version 0.1
+ * 
+ */
 
 public class TwitterPoruka {
-	/*
+	/**
 	 * atribut korisnik-ime korisnika
 	 */
 	private String korisnik;
-	/*
+	/**
 	 * atribut poruka-sadrzaj poruke
 	 */
 	private String poruka;
-	/*
+	/**
 	 * metoda getKorisnik
 	 * @return String vraca ime korisnika
 	 */
 	public String getKorisnik() {
 	return korisnik;
 	}
-	/*
+	/**
 	 * metoda setKorisnik postavlja korisnik
 	 *@param korisnik unosi se ime korisnika
 	 *@throws RuntimeException ukoliko je korisnik nije unet ili je unet prazan String
@@ -27,14 +34,14 @@ public class TwitterPoruka {
 	"Ime korisnika mora biti uneto");
 	this.korisnik = korisnik;
 	}
-	/*
+	/**
 	 * metoda getPoruka 
 	 * @return String vraca sadrzaj poruke
 	 */
 	public String getPoruka() {
 	return poruka;
 	}
-	/*
+	/**
 	 * metoda setPoruka
 	 * @param poruka unosi se sadrzaj poruke
 	 * @throws RuntimeException ukoliko poruka nije uneta ili ima vise od 140 znakova
@@ -45,7 +52,9 @@ public class TwitterPoruka {
 	"Poruka mora biti uneta i mora imati najvise 140 znakova");}
 	this.poruka = poruka;
 	}
-	
+	/**
+	 * Metoda ispisuje ime korisnika i sadrzaj poruke
+	 */
 	public String toString(){
 	return "KORISNIK:"+korisnik+" PORUKA:"+poruka;
 	} 
